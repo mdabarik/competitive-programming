@@ -4,8 +4,7 @@ vector<int> primeNum;
 
 void primeGeneration() {
     prime[0] = prime[1] = false;
-
-    // Remove even numbers (except 2)
+    
     for (int i = 4; i <= mx; i += 2) {
         prime[i] = false;
     }
@@ -13,16 +12,30 @@ void primeGeneration() {
     int sq = sqrt(mx);
     for (int i = 3; i <= sq; i += 2) {
         if (prime[i]) {
-            // j starts from i*i and jumps 2*i (only odd multiples)
             for (int j = i * i; j <= mx; j += 2 * i) {
                 prime[j] = false;
             }
         }
     }
-
-    // Collect primes (skip evens)
     primeNum.push_back(2);
     for (int i = 3; i <= mx; i += 2) {
         if (prime[i]) primeNum.push_back(i);
     }
+}
+
+vector<int> primeFactors (int n ){
+    vector<int> factors;
+    for ( auto p : primeNum ) {
+        if( 1LL * p * p > n ) break;
+        if( n % p == 0 ) {
+            while ( n % p == 0 ) {
+                factors.push_back(p);
+                n /= p;
+            }
+        }
+    }
+    if(n > 1) {
+        factors.push_back(n);
+    }
+    return factors;
 }
