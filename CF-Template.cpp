@@ -4,8 +4,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define int long long
-// #define int long long int
+#define int long long 
+#define pinf LLONG_MAX
+#define ninf LLONG_MIN
 #define coutBit(x)  (int)__builtin_popcount(x)
 #define lsb(x)  (int)__builtin_ctzll(x)
 #define yes cout << "YES\n"
@@ -15,10 +16,8 @@ using namespace std;
 #define lcm(a,b) (a/__gcd(a, b)*b)
 
 /* Robbi zidni Ilma */
-void BarikErSolution() {
-	int n; cin>>n;
-	if (n%2) yes;
-	else no;
+void BarikSolution() {
+	
 }
 
 signed main() {
@@ -29,7 +28,7 @@ signed main() {
 	int testcase; 
 	cin>>testcase;
 	while (testcase--) {
-		BarikErSolution();
+		BarikSolution();
 	}
 	
 	return 0;
