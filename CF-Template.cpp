@@ -14,6 +14,7 @@ using namespace std;
 #define endl '\n'
 #define PI acos(-1.0)
 #define lcm(a,b) (a/__gcd(a, b)*b)
+#define MOD 1000000007LL
 
 /* Robbi zidni Ilma */
 void BarikSolution() {
